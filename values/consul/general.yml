@@ -1,0 +1,11 @@
+global:
+  name: consul
+client:
+  extraConfig: |
+    {"telemetry": {"prometheus_retention_time": "24h"}}
+server:
+  extraConfig: |
+    {"telemetry": {"prometheus_retention_time": "24h"}}
+syncCatalog:
+  enabled: true
+  default: false

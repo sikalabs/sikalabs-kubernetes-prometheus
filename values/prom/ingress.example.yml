@@ -1,0 +1,25 @@
+prometheus:
+  ingress:
+    enabled: true
+    hosts:
+      - prometheus.k8s.sikademo.com # --- PROMETHEUS DOMAIN ---
+    paths:
+      - /
+
+grafana:
+  ingress:
+    enabled: true
+    annotations: {}
+    hosts:
+      - grafana.k8s.sikademo.com # --- GRAFANA DOMAIN ---
+    paths:
+      - /
+
+alertmanager:
+  ingress:
+    enabled: true
+    annotations: {}
+    hosts:
+      - alertmanager.k8s.sikademo.com # --- ALERTMANAGER DOMAIN ---
+    paths:
+      - /
