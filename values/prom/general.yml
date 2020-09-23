@@ -4,10 +4,6 @@ nameOverride: prom
 defaultRules:
   create: false
 
-  # Disable self monitor
-  serviceMonitor:
-    selfMonitor: false
-
 prometheus:
   # Allow scrapping every ServiceMonitors in every namespace
   prometheusSpec:
@@ -66,3 +62,7 @@ nodeExporter:
 # Deploy CRDs manually
 prometheusOperator:
   createCustomResource: false
+
+  # Disable self monitor
+  serviceMonitor:
+    selfMonitor: false
