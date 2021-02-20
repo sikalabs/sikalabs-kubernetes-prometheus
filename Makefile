@@ -25,6 +25,9 @@ ingress:
 ingress-simple:
 	kubectl apply -f https://raw.githubusercontent.com/ondrejsika/kubernetes-ingress-traefik/master/ingress-traefik.yml
 
+longhorn-ingress:
+	kubectl apply -f longhorn-ingress.yml
+
 maildev:
 	kubectl apply -f k8s/ns-maildev.yml
 	helm upgrade --install -n maildev maildev ondrejsika/maildev --set host=mail.k8s.sikademo.com
