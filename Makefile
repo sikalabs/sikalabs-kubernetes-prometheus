@@ -22,6 +22,9 @@ consul:
 ingress:
 	kubectl apply -f https://raw.githubusercontent.com/ondrejsika/kubernetes-ingress-traefik/master/ingress-traefik-consul.yml
 
+ingress-simple:
+	kubectl apply -f https://raw.githubusercontent.com/ondrejsika/kubernetes-ingress-traefik/master/ingress-traefik.yml
+
 maildev:
 	kubectl apply -f k8s/ns-maildev.yml
 	helm upgrade --install -n maildev maildev ondrejsika/maildev --set host=mail.k8s.sikademo.com
