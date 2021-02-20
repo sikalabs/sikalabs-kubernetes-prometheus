@@ -1,3 +1,5 @@
+[SikaLabs](https://sikalabs.com) | <opensource@sikalabs.com> | [Ondrej Sika (sika.io)](https://sika.io) | <ondrej@sika.io>
+
 # sikalabs-k8s-prom
 
 ## Setup
