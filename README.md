@@ -69,4 +69,4 @@ Our example dashboard: https://grafana.k8s.sikademo.com/d/ex01/example-dashboard
 
 ### MailDev (Email Client)
 
-- https://maildev.k8s.sikademo.com
+- https://mail.k8s.sikademo.com
