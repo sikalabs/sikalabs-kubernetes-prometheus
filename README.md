@@ -1,4 +1,4 @@
-# ondrejsika-k8s-prom
+# sikalabs-k8s-prom
 
 ## Setup
 
