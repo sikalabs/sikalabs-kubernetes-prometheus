@@ -1,4 +1,4 @@
-PROMETHEUS_OPERATOR_VERSION = v0.45.0
+PROMETHEUS_OPERATOR_VERSION = v0.51.0
 
 helm:
 	helm repo add ondrejsika https://helm.oxs.cz
