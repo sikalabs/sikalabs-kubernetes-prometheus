@@ -29,7 +29,7 @@ copy-example-values:
 	cp values/prom/alertmanager-config.example.yml values/prom/alertmanager-config.yml
 
 prom:
-	@make _prom
+	@make _prom EXTRA_ARGS="-f values/prom/disable-digitalocean.yml"
 
 prom-disable-defaults:
 	@make _prom EXTRA_ARGS="-f values/prom/disable-defaults.yml"
