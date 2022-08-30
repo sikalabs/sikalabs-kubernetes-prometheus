@@ -18,8 +18,5 @@ kubeEtcd:
 kubeScheduler:
   enabled: false
 
-kubeStateMetrics:
-  enabled: false
-
 nodeExporter:
   enabled: false
