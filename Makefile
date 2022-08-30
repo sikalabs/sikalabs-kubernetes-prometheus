@@ -44,6 +44,9 @@ _prom:
 		-f values/prom/ingress.yml \
 		-f values/prom/alertmanager-config.yml ${EXTRA_ARGS}
 
+prom-get-values:
+	helm get values prometheus-stack -n prometheus-stack
+
 prom-uninstall:
 	helm uninstall -n prometheus-stack prometheus-stack
 
