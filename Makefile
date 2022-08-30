@@ -30,7 +30,7 @@ longhorn-ingress:
 
 maildev:
 	kubectl apply -f k8s/ns-maildev.yml
-	helm upgrade --install -n maildev maildev ondrejsika/maildev --set host=mail.k8s.sikademo.com
+	helm upgrade --install -n maildev --create-namespace maildev ondrejsika/maildev --set host=mail.k8s.sikademo.com
 
 crd:
 	kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/$(PROMETHEUS_OPERATOR_VERSION)/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml
@@ -49,6 +49,7 @@ prom:
 	helm upgrade --install \
 		prometheus-stack prometheus-community/kube-prometheus-stack \
 		-n prometheus-stack \
+		--create-namespace \
 		-f values/prom/general.yml \
 		-f values/prom/ingress.yml \
 		-f values/prom/alertmanager-config.yml
