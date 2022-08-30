@@ -239,6 +239,6 @@ data:
       },
       "timezone": "",
       "title": "Example Dashboard",
-      "uid": "ex01",
+      "uid": "example-dashboard",
       "version": 2
     }
