@@ -2,28 +2,13 @@ PROMETHEUS_OPERATOR_VERSION = v0.58.0
 
 helm:
 	helm repo add ondrejsika https://helm.oxs.cz
-	helm repo add hashicorp https://helm.releases.hashicorp.com
 	helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-	helm repo add stable https://charts.helm.sh/stable
 	helm repo update
 
 longhorn:
 	kubectl delete sc --all
 	kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/master/deploy/longhorn.yaml
 	kubectl patch storageclass longhorn -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
-
-consul:
-	kubectl apply -f k8s/ns-consul.yml
-	helm upgrade --install \
-		consul hashicorp/consul \
-		-n consul \
-		-f values/consul/general.yml
-
-ingress:
-	kubectl apply -f https://raw.githubusercontent.com/ondrejsika/kubernetes-ingress-traefik/master/ingress-traefik-consul.yml
-
-ingress-simple:
-	kubectl apply -f https://raw.githubusercontent.com/ondrejsika/kubernetes-ingress-traefik/master/ingress-traefik.yml
 
 longhorn-ingress:
 	kubectl apply -f longhorn-ingress.yml
