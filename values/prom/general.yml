@@ -16,6 +16,8 @@ prometheus:
     selfMonitor: false
 
 grafana:
+  adminPassword: admin
+
   # Disable default dashboards
   defaultDashboardsEnabled: false
 
