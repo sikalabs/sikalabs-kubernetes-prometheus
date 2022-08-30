@@ -14,7 +14,6 @@ longhorn-ingress:
 	kubectl apply -f longhorn-ingress.yml
 
 maildev:
-	kubectl apply -f k8s/ns-maildev.yml
 	helm upgrade --install -n maildev --create-namespace maildev maildev --repo https://helm.sikalabs.io --set host=mail.k8s.sikademo.com
 
 crd:
@@ -30,7 +29,6 @@ copy-example-values:
 	cp values/prom/alertmanager-config.example.yml values/prom/alertmanager-config.yml
 
 prom:
-	kubectl apply -f k8s/ns-prom.yml
 	helm upgrade --install \
 		prometheus-stack kube-prometheus-stack \
 		--repo https://prometheus-community.github.io/helm-charts \
