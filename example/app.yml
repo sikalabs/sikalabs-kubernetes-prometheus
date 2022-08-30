@@ -46,18 +46,27 @@ spec:
   selector:
     app: metrics-example
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: metrics-example
-  labels:
-    app: metrics-example
+  name: webservers
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - metrics-example.k8s.sikademo.com
+        - apache.k8s.sikademo.com
+      secretName: metrics-example-ingress-tls
   rules:
-    - host: me.k8s.sikademo.com
+    - host: metrics-example.k8s.sikademo.com
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
-              serviceName: metrics-example
-              servicePort: 80
+              service:
+                name: metrics-example
+                port:
+                  number: 80
