@@ -2,6 +2,13 @@
 
 nameOverride: prom
 
+prometheus:
+  # Allow scrapping every ServiceMonitors in every namespace
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+    ruleSelectorNilUsesHelmValues: false
+
 grafana:
   adminPassword: admin
 

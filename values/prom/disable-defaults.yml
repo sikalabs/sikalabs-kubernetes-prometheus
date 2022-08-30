@@ -5,12 +5,6 @@ defaultRules:
   create: false
 
 prometheus:
-  # Allow scrapping every ServiceMonitors in every namespace
-  prometheusSpec:
-    serviceMonitorSelectorNilUsesHelmValues: false
-    podMonitorSelectorNilUsesHelmValues: false
-    ruleSelectorNilUsesHelmValues: false
-
   # Disable self monitor
   serviceMonitor:
     selfMonitor: false
