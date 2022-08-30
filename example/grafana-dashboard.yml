@@ -6,9 +6,9 @@ metadata:
   labels:
     grafana_dashboard: "1"
 data:
-  # Name of dashboard file (`dashboard.json`) must be unique across all dashboards for a Grafana instance. Otherwise this would cause an error and misbehavior.
+  # Name of dashboard file (`example-requests.json`) must be unique across all dashboards for a Grafana instance. Otherwise this would cause an error and misbehavior.
   # Good practices is to use name of the app which the dashboard is for as a prefix, e.g. `etcd-dashboard.json`
-  dashboard.json: |-
+  example-requests.json: |-
     {
       "annotations": {
         "list": [
