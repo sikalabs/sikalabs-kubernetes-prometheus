@@ -5,21 +5,37 @@ prometheus:
       - prometheus.k8s.sikademo.com # --- PROMETHEUS DOMAIN ---
     paths:
       - /
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+    tls:
+    - secretName: prometheus-ingress-tls
+      hosts:
+      - prometheus.k8s.sikademo.com
 
 grafana:
   ingress:
     enabled: true
-    annotations: {}
     hosts:
       - grafana.k8s.sikademo.com # --- GRAFANA DOMAIN ---
     paths:
       - /
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+    tls:
+    - secretName: grafana-ingress-tls
+      hosts:
+      - grafana.k8s.sikademo.com
 
 alertmanager:
   ingress:
     enabled: true
-    annotations: {}
     hosts:
       - alertmanager.k8s.sikademo.com # --- ALERTMANAGER DOMAIN ---
     paths:
       - /
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+    tls:
+    - secretName: alertmanager-ingress-tls
+      hosts:
+      - alertmanager.k8s.sikademo.com
