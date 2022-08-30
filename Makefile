@@ -1,5 +1,10 @@
 PROMETHEUS_OPERATOR_VERSION = v0.58.0
 
+cluster-setup:
+	slu scripts kubernetes install-ingress --use-proxy-protocol
+	slu scripts kubernetes install-cert-manager
+	slu scripts kubernetes install-cluster-issuer
+
 longhorn:
 	kubectl delete sc --all
 	kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/master/deploy/longhorn.yaml
