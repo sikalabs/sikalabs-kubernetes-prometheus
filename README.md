@@ -11,13 +11,11 @@ git clone git@github.com:sikalabs/sikalabs-kubernetes-prometheus.git
 cd sikalabs-kubernetes-prometheus
 ```
 
-Setup helm, longhorn, consul, ingress, maildev
+Setup helm, longhorn, maildev
 
 ```
-make helm
+make cluster-setup
 make longhorn
-make consul
-make ingress
 make maildev
 ```
 
@@ -58,9 +56,9 @@ kubectl apply -f ./example/
 
 - URL: https://grafana.k8s.sikademo.com
 - User: `admin`
-- Password: `prom-operator`
+- Password: `admin`
 
-Our example dashboard: https://grafana.k8s.sikademo.com/d/ex01/example-dashboard
+Our example dashboard: https://grafana.k8s.sikademo.com/d/example-dashboard/example-dashboard
 
 ### Alert Manager
 
