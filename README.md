@@ -1,14 +1,14 @@
 [SikaLabs](https://sikalabs.com) | <opensource@sikalabs.com> | [Ondrej Sika (sika.io)](https://sika.io) | <ondrej@sika.io>
 
-# sikalabs-k8s-prom
+# sikalabs-kubernetes-prometheus
 
 ## Setup
 
 Clone repo
 
 ```
-git clone git@github.com:ondrejsika/ondrejsika-k8s-prom.git
-cd ondrejsika-k8s-prom
+git clone git@github.com:sikalabs/sikalabs-kubernetes-prometheus.git
+cd sikalabs-kubernetes-prometheus
 ```
 
 Setup helm, longhorn, consul, ingress, maildev
