@@ -1,0 +1,65 @@
+# Disable Default Prometheus Rules
+defaultRules:
+  create: false
+
+prometheus:
+  # Allow scrapping every ServiceMonitors in every namespace
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+    ruleSelectorNilUsesHelmValues: false
+
+  # Disable self monitor
+  serviceMonitor:
+    selfMonitor: false
+
+grafana:
+  # Disable default dashboards
+  defaultDashboardsEnabled: false
+
+  # Disable self monitor
+  serviceMonitor:
+    selfMonitor: false
+
+alertmanager:
+  # Disable self monitor
+  serviceMonitor:
+    selfMonitor: false
+
+# Disable Scrapping of Kubernetes Components
+kubeApiServer:
+  enabled: false
+
+kubelet:
+  enabled: false
+
+kubeControllerManager:
+  enabled: false
+
+coreDns:
+  enabled: false
+
+kubeDns:
+  enabled: false
+
+kubeEtcd:
+  enabled: false
+
+kubeScheduler:
+  enabled: false
+
+kubeProxy:
+  enabled: false
+
+kubeStateMetrics:
+  enabled: false
+
+nodeExporter:
+  enabled: false
+
+# Deploy CRDs manually
+prometheusOperator:
+
+  # Disable self monitor
+  serviceMonitor:
+    selfMonitor: false

@@ -29,6 +29,12 @@ copy-example-values:
 	cp values/prom/alertmanager-config.example.yml values/prom/alertmanager-config.yml
 
 prom:
+	@make _prom
+
+prom-disable-defaults:
+	@make _prom EXTRA_ARGS="-f values/prom/disable-defaults.yml"
+
+_prom:
 	helm upgrade --install \
 		prometheus-stack kube-prometheus-stack \
 		--repo https://prometheus-community.github.io/helm-charts \
@@ -36,7 +42,7 @@ prom:
 		--create-namespace \
 		-f values/prom/general.yml \
 		-f values/prom/ingress.yml \
-		-f values/prom/alertmanager-config.yml
+		-f values/prom/alertmanager-config.yml ${EXTRA_ARGS}
 
 prom-uninstall:
 	helm uninstall -n prometheus-stack prometheus-stack
