@@ -1,10 +1,5 @@
 PROMETHEUS_OPERATOR_VERSION = v0.58.0
 
-helm:
-	helm repo add ondrejsika https://helm.oxs.cz
-	helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-	helm repo update
-
 longhorn:
 	kubectl delete sc --all
 	kubectl apply -f https://raw.githubusercontent.com/longhorn/longhorn/master/deploy/longhorn.yaml
@@ -15,7 +10,7 @@ longhorn-ingress:
 
 maildev:
 	kubectl apply -f k8s/ns-maildev.yml
-	helm upgrade --install -n maildev --create-namespace maildev ondrejsika/maildev --set host=mail.k8s.sikademo.com
+	helm upgrade --install -n maildev --create-namespace maildev maildev --repo https://helm.sikalabs.io --set host=mail.k8s.sikademo.com
 
 crd:
 	kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/$(PROMETHEUS_OPERATOR_VERSION)/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml
@@ -32,7 +27,8 @@ copy-example-values:
 prom:
 	kubectl apply -f k8s/ns-prom.yml
 	helm upgrade --install \
-		prometheus-stack prometheus-community/kube-prometheus-stack \
+		prometheus-stack kube-prometheus-stack \
+		--repo https://prometheus-community.github.io/helm-charts \
 		-n prometheus-stack \
 		--create-namespace \
 		-f values/prom/general.yml \
