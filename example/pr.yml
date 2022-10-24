@@ -14,3 +14,11 @@ spec:
           labels:
             severity: none
             team: devs
+        - alert: ExampleRateAlert
+          annotations:
+            message: |
+              High request rate
+          expr: rate(example_requests[10m]) > 10
+          labels:
+            severity: warn
+            team: infra
