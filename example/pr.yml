@@ -13,3 +13,4 @@ spec:
           expr: example_requests > 10
           labels:
             severity: none
+            team: devs
