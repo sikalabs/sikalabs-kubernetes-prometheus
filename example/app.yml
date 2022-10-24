@@ -57,7 +57,6 @@ spec:
   tls:
     - hosts:
         - metrics-example.k8s.sikademo.com
-        - apache.k8s.sikademo.com
       secretName: metrics-example-ingress-tls
   rules:
     - host: metrics-example.k8s.sikademo.com
