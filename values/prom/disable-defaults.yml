@@ -15,7 +15,7 @@ grafana:
 
   # Disable self monitor
   serviceMonitor:
-    selfMonitor: false
+    enabled: false
 
 alertmanager:
   # Disable self monitor
