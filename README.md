@@ -45,6 +45,8 @@ Apply example
 kubectl apply -f ./example/
 ```
 
+See: https://metrics-example.k8s.sikademo.com/
+
 ### Prometheus
 
 - Service Discovery - https://prometheus.k8s.sikademo.com/service-discovery
