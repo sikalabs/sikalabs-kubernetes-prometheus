@@ -4,8 +4,8 @@ metadata:
   name: metrics-example
 spec:
   jobLabel: metrics-example
-  endpoints:
-    - port: http
   selector:
     matchLabels:
       app: metrics-example
+  endpoints:
+    - port: http
