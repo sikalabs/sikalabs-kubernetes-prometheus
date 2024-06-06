@@ -19,10 +19,12 @@ spec:
     spec:
       containers:
         - name: metrics-example
-          image: ondrejsika/metrics-example
+          image: sikalabs/hello-world-server:kcd
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8000
+            - name: metrics
+              containerPort: 8001
           resources:
             requests:
               cpu: 10m
@@ -43,6 +45,10 @@ spec:
       port: 80
       protocol: TCP
       targetPort: http
+    - name: metrics
+      port: 8001
+      protocol: TCP
+      targetPort: metrics
   selector:
     app: metrics-example
 ---
@@ -69,3 +75,10 @@ spec:
                 name: metrics-example
                 port:
                   number: 80
+          - path: /metrics
+            pathType: Prefix
+            backend:
+              service:
+                name: metrics-example
+                port:
+                  number: 8001

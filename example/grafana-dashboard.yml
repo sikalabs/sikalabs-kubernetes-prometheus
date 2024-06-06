@@ -73,7 +73,7 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "example_requests",
+              "expr": "hello_world_server_requests_total",
               "interval": "",
               "legendFormat": "",
               "refId": "A"
@@ -165,7 +165,7 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(example_requests[5m])",
+              "expr": "rate(hello_world_server_requests_total[5m])",
               "interval": "",
               "legendFormat": "",
               "refId": "A"

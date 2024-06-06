@@ -9,8 +9,8 @@ spec:
         - alert: ExampleAlert
           annotations:
             message: |
-              Alert on: example_requests > 10
-          expr: example_requests > 10
+              Alert on: hello_world_server_requests_total > 10
+          expr: hello_world_server_requests_total > 10
           labels:
             severity: none
             team: devs
@@ -18,7 +18,7 @@ spec:
           annotations:
             message: |
               High request rate
-          expr: rate(example_requests[10m]) > 10
+          expr: rate(hello_world_server_requests_total[10m]) > 10
           labels:
             severity: warn
             team: infra

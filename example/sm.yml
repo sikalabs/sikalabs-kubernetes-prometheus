@@ -8,4 +8,4 @@ spec:
     matchLabels:
       app: metrics-example
   endpoints:
-    - port: http
+    - port: metrics

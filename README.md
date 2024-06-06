@@ -52,7 +52,7 @@ See: https://metrics-example.k8s.sikademo.com/
 - Service Discovery - https://prometheus.k8s.sikademo.com/service-discovery
 - Targets - https://prometheus.k8s.sikademo.com/targets
 - Alerts - https://prometheus.k8s.sikademo.com/alerts
-- Graph - https://prometheus.k8s.sikademo.com/graph?g0.range_input=1h&g0.expr=example_requests&g0.tab=1
+- Graph - https://prometheus.k8s.sikademo.com/graph?g0.range_input=1h&g0.expr=hello_world_server_requests_total&g0.tab=1
 
 ### Grafana
 
