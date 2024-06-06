@@ -1,7 +1,7 @@
 PROMETHEUS_OPERATOR_VERSION = v0.60.1
 
 cluster-setup:
-	slu scripts kubernetes install-ingress --use-proxy-protocol
+	slu scripts kubernetes install-ingress
 	slu scripts kubernetes install-cert-manager
 	slu scripts kubernetes install-cluster-issuer
 
